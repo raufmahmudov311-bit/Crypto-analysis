@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-base-950 text-slate-200 font-sans antialiased;
+    background-image: radial-gradient(circle at 20% 0%, rgba(0,229,255,0.08), transparent 40%),
+      radial-gradient(circle at 80% 10%, rgba(0,255,102,0.06), transparent 40%);
+    background-attachment: fixed;
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #202c3f;
+    border-radius: 8px;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-base-900/60 backdrop-blur-xl border border-white/5 rounded-2xl;
+  }
+  .glass-card {
+    @apply bg-base-800/50 backdrop-blur-lg border border-white/5 rounded-xl;
+  }
+  .neon-text-green {
+    color: #00ff66;
+    text-shadow: 0 0 12px rgba(0, 255, 102, 0.4);
+  }
+  .neon-text-red {
+    color: #ff3366;
+    text-shadow: 0 0 12px rgba(255, 51, 102, 0.4);
+  }
+  .neon-text-cyan {
+    color: #00e5ff;
+    text-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
+  }
+  .btn-primary {
+    @apply bg-neon-cyan/10 border border-neon-cyan/40 text-neon-cyan hover:bg-neon-cyan/20 hover:shadow-neon-cyan transition-all duration-200 rounded-lg font-medium;
+  }
+  .btn-pro {
+    @apply bg-gradient-to-r from-neon-green/20 to-neon-cyan/20 border border-neon-green/40 text-neon-green hover:shadow-neon-green transition-all duration-200 rounded-lg font-semibold;
+  }
+  .input-field {
+    @apply bg-base-800/60 border border-white/10 rounded-lg px-3 py-2 text-sm text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-neon-cyan/50 focus:shadow-neon-cyan transition-all;
+  }
+}
